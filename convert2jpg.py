@@ -43,7 +43,7 @@ def get_images(dir_object):
     files = []
     for obj in dir_object.rglob('*.*'):
         if obj.suffix in ['.png', '.jpg', '.jp2', '.jpeg', '.tiff', '.tif']:
-            files.append(str(obj))
+            files.append(obj)
     return files
 
 
@@ -102,11 +102,8 @@ if __name__ == '__main__':
         else:
             infile = read_image(img_path)
 
-        if args.output_dir:
-            filename = img_path.slice[img_path.rindex('.'):] + ".jpg"
-            filepath = '/'.join([args.output_dir, filename])
-        else:
-            filepath = img_path
+        filename = img_path.stem + ".jpg"
+        filepath = Path(args.output_dir) / filename
 
         save_image(infile,
                    filename=filepath,
