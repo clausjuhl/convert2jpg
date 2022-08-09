@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "convert2jpg"
+version = "0.1.0"
+description = ""
+authors = ["Claus Juhl Knudsen <cjk@aarhus.dk>"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+Gooey = "^1.0.8"
+opencv-python = "^4.6.0"
+img2pdf = "^0.4.4"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
